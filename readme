@@ -1,0 +1,21 @@
+
+# pip install django
+# to set up the project
+# django-admin startproject titlesite .
+# its creates all kinds of files, some are configs, but leave them for now
+# so that was creating the project, now we want to create the app, so we run....title_application being the name
+# python manage.py startapp title_apply
+title_apply refers to the app, titlesite are configuration files for the project....not the app
+manage.py is for the project
+a project can have multiple apps and each one will have its own directory, which would be created in the same way
+we then added the app name to the INSTALLED_APPS list in settings
+to run a django app requires this.....of course
+python manage.py runserver
+with django, you start bottom up and start with the database
+to stop the django app, go to the terminal and press control c
+
+so then we go to models in the app, and use the models class to set up the columns
+from now on I will comment as I go in the build of the app
+and we start in the models.py file
+
+

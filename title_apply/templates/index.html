@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="mt-4 mb-4">Doofus Application Form</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group mb-4">
+        <label for="first_name">First Name: </label>
+        <input class="form-control" type="text" id="first_name" name="first_name" required>
+    </div>
+    <div class="form-group mb-4">
+        <label for="last_name">Last Name: </label>
+        <input class="form-control" type="text" id="last_name" name="last_name" required>
+    </div>
+    <div class="form-group mb-4">
+        <label for="email">Email: </label>
+        <input class="form-control" type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group mb-4">
+        <label for="date">Available Knighting date: </label>
+        <input class="form-control" type="date" id="date" name="date" required>
+    </div>
+    <div class="form-group mb-4">
+        <label>Current Field of Expertise:</label>
+        <br>
+        <div class="btn-group-vertical" id="current_titles">
+            <input class="btn-check form-control" type="radio" id="titled" value="titled" name="current_titles" required>
+            <label class="btn btn-outline-secondary" for="titled">Currently Titled: </label>
+
+            <input class="btn-check form-control" type="radio" id="untitled" value="untitled" name="current_titles" required>
+            <label class="btn btn-outline-secondary" for="untitled">Currently Untitled: </label>
+
+            <input class="btn-check form-control" type="radio" id="self-titled" value="self-titled" name="current_titles" required>
+            <label class="btn btn-outline-secondary" for="self-titled">Self-Titled: </label>
+
+            <input class="btn-check form-control" type="radio" id="student" value="student" name="current_titles" required>
+            <label class="btn btn-outline-secondary" for="student">Student: </label>
+        </div>
+    </div>
+    <button class="btn btn-secondary mb-4" type="submit">Submit</button>
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+</form>
+{% endblock %}
+
+
